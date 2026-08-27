@@ -20190,8 +20190,7 @@ is, the `exchanged` member of the result structure may be `false` even if the
 
 ### Atomic Store Min and Max Functions ### {#atomic-store-min-max}
 
-The functions in this section [=behavioral requirement|will=] be available only if
-the [=extension/atomic_vec2u_min_max=] [=enable-extension|extension=] is enabled.
+These functions all require the [=language_extension/atomic_vec2u_min_max=] language feature.
 
 The functions do not return a value.
 
