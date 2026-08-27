@@ -20179,7 +20179,7 @@ fn atomicCompareExchangeWeak(atomic_ptr: ptr<AS, atomic<T>, read_write>, cmp : T
   if comparison {
     *atomic_ptr = v;
   }
-  return _atomic_compare_exchange_result<T>(old, comparison);
+  return __atomic_compare_exchange_result<T>(old, comparison);
 }
   </xmp>
 </div>
