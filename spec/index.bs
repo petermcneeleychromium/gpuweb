@@ -12126,7 +12126,7 @@ dictionary GPUComputePassDescriptor
                         - all of |workgroupCountX|, |workgroupCountY| and |workgroupCountZ| are &le;
                             |this|.device.limits.{{supported limits/maxComputeWorkgroupsPerDimension}}.
                         - let |workgroupSize| be the computed workgroup size for
-                            |bindingState|.{{GPUComputePassEncoder/[[pipeline]]}}. 
+                            |bindingState|.{{GPUComputePassEncoder/[[pipeline]]}}.
                         - the entry point uses the [=builtin/workgroup_index=]
                             built-in value and |workgroupCountX| &times; |workgroupCountY|
                             &times; |workgroupCountZ|

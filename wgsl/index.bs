@@ -274,9 +274,6 @@ spec: WebGPU; urlPrefix: https://gpuweb.github.io/gpuweb/#
         text: subgroups-feature; url: subgroups
         text: subgroupMinSize; url: dom-gpuadapterinfo-subgroupminsize
         text: subgroupMaxSize; url: dom-gpuadapterinfo-subgroupmaxsize
-        text: shader-f16; url: shader-f16
-        text: clip-distances; url: dom-gpufeaturename-clip-distances
-        text: dual-source-blending; url: dom-gpufeaturename-dual-source-blending
         text: atomic-vec2u-min-max; url: dom-gpufeaturename-atomic-vec2u-min-max
         text: primitive restart value; url: primitive-restart-value
         text: texture view swizzle; url: dom-gputextureviewdescriptor-swizzle
@@ -3164,7 +3161,7 @@ An <dfn noexport>atomic type</dfn> encapsulates a [=type/concrete=] [=integer=] 
     <tr><th>Type<th>Description
   </thead>
   <tr algorithm="atomic type"><td>atomic&lt;|T|&gt;
-    <td>Atomic of type |T|. Unless otherwise specified, |T| [=shader-creation error|must=] be either [=u32=] or [=i32=].
+    <td>Atomic of type |T|. |T| [=shader-creation error|must=] be either [=u32=] or [=i32=].
   <tr algorithm="atomic type vecu"><td>atomic&lt;[=vector|vec2=]&lt;u32&gt;&gt;
     <td>Atomic of type `vec2`&lt;`u32`&gt;.
     A value of this type denotes an unsigned [=64-bit integer=] type, with the 32 least significant bits in vector
@@ -20206,17 +20203,17 @@ with the value `v`.
 
 Performs the following steps atomically:
 <div algorithm="atomic-store-min-vec2u">
-1.  Load the original [=vec2u=] value |old| in the memory referenced by |atomic_ptr|.
+1.  Load the original [=vec2u=] value |old| from the memory referenced by |atomic_ptr|.
 
 2.  Compute the 64-bit unsigned integer values:
     * |old64| = 2<sup>32</sup> &times; |old|[1] + |old|[0]
     * |v64| = 2<sup>32</sup> &times; |v|[1] + |v|[0]
 
-3.  Compute value |new64| as the minium of |old64| and |v64|.
+3.  Compute value |new64| as the minimum of |old64| and |v64|.
 
-4.  Compute value |new| of type vec2&lt;u32&gt;, where
-    |new|[0] contains the least significant 32 bits of |new64|, and
-    |new|[1] contains the 32 most significant bits of |new|.
+4.  Compute value |new| of type vec2&lt;u32&gt;, where:
+    * |new|[0] contains the least significant 32 bits of |new64|, and
+    * |new|[1] contains the 32 most significant bits of |new64|.
 
 5.  Store |new| into the memory referenced by |atomic_ptr|.
 
@@ -20228,12 +20225,12 @@ Performs the following steps atomically:
 fn atomicStoreMax(atomic_ptr: ptr<storage, atomic<vec2<u32>>, read_write>, v: vec2<u32>)
 ```
 
-Atomically performs a maximum operation on the atomic object pointed to by `atomic_ptr`
+Atomically performs a 64-bit unsigned integer maximum operation on the atomic object pointed to by `atomic_ptr`
 with the value `v`.
 
 Performs the following steps atomically:
 <div algorithm="atomic-store-max-vec2u">
-1.  Load the original [=vec2u=] value |old| in the memory referenced by |atomic_ptr|.
+1.  Load the original [=vec2u=] value |old| from the memory referenced by |atomic_ptr|.
 
 2.  Compute the 64-bit unsigned integer values:
     * |old64| = 2<sup>32</sup> &times; |old|[1] + |old|[0]
@@ -20241,9 +20238,9 @@ Performs the following steps atomically:
 
 3.  Compute value |new64| as the maximum of |old64| and |v64|.
 
-4.  Compute value |new| of type vec2&lt;u32&gt;, where
-    |new|[0] contains the least significant 32 bits of |new64|, and
-    |new|[1] contains the 32 most significant bits of |new|.
+4.  Compute value |new| of type vec2&lt;u32&gt;, where:
+    * |new|[0] contains the least significant 32 bits of |new64|, and
+    * |new|[1] contains the 32 most significant bits of |new64|.
 
 5.  Store |new| into the memory referenced by |atomic_ptr|.
 
