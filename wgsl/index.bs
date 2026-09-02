@@ -2078,7 +2078,7 @@ Extension names are not [=identifiers=]: they do not [=resolves|resolve=] to [=d
       <td>
       Supports the [[#atomic-store-min|atomicStoreMin]] and
       [[#atomic-store-max|atomicStoreMax]] built-in functions
-      on [[#atomic-types|atomic&lt;vec2u&gt;]] objects.
+      on [[#atomic-types|atomic&lt;vec2&lt;u32&gt;&gt;]] objects.
 
 </table>
 
