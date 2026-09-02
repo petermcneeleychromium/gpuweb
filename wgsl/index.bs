@@ -1895,7 +1895,7 @@ The valid [=enable-extensions=] are listed in the following table.
   <tr><td><dfn noexport dfn-for="extension">`atomic_vec2u_min_max`</dfn>
       <td>{{GPUFeatureName/"atomic-vec2u-min-max"}}
       <td>The built-in functions [[#atomic-store-min|atomicStoreMin]] and
-          [[#atomic-store-max|atomicStoreMax]] are valid to use on [=atomic type|atomic=]&lt;[=vec2u=]&gt;
+          [[#atomic-store-max|atomicStoreMax]] are valid to use on [=atomic type|atomic=]&lt;[=vec|vec2=]&lt;[=u32=]&gt;&gt;
           types in the [=address spaces/storage=] address space. Otherwise, using these will result in a
           [=shader-creation error=].
 </table>
