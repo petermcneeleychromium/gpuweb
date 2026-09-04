@@ -17658,9 +17658,6 @@ When enabled:
 
 - Allows the creation of textures with block-based compressed {{GPUTextureFormat}}s whose {{GPUTextureDescriptor/size}} is not a multiple of the [=texel block width=] and [=texel block height=].
 
-<!-- IMPORTANT: Follow the style of features above. Note this section is always non-normative.
-    When adding a new feature here, also update the GPUFeatureName definition. -->
-
 <h3 id=dom-gpufeaturename-atomic-vec2u-min-max data-dfn-type=enum-value data-dfn-for=GPUFeatureName>`"atomic-vec2u-min-max"`
 </h3>
 
@@ -17668,9 +17665,12 @@ When enabled:
 
 - Allows the use of 64-bit atomic minimum and maximum operations on `atomic<vec2u>` in WGSL.
 
-New WGSL language extensions:
+New WGSL extensions:
 
 - [=extension/atomic_vec2u_min_max=]
+
+<!-- IMPORTANT: Follow the style of features above. Note this section is always non-normative.
+    When adding a new feature here, also update the GPUFeatureName definition. -->
 
 # Appendices # {#appendices}
 
